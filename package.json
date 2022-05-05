@@ -1,0 +1,12 @@
+{
+    "name": "hyperledger-besu",
+    "scripts": {
+        "start-node-1": "besu --data-path=./Permissioned-Network/Node-1/data --genesis-file=./Permissioned-Network/cliqueGenesis.json --permissions-nodes-config-file-enabled --permissions-accounts-config-file-enabled --rpc-http-enabled --rpc-http-api=ADMIN,ETH,NET,PERM,CLIQUE --host-allowlist='*' --rpc-http-cors-origins='*'",
+        "start-node-2": "besu --data-path=./Permissioned-Network/Node-2/data --genesis-file=./Permissioned-Network/cliqueGenesis.json  --permissions-nodes-config-file-enabled --permissions-accounts-config-file-enabled --rpc-http-enabled --rpc-http-api=ADMIN,ETH,NET,PERM,CLIQUE --host-allowlist='*' --rpc-http-cors-origins='*' --p2p-port=30304 --rpc-http-port=8546 --engine-rpc-http-port=8551 --engine-host-allowlist='*'",
+        "start-node-3": "besu --data-path=./Permissioned-Network/Node-3/data --genesis-file=./Permissioned-Network/cliqueGenesis.json  --permissions-nodes-config-file-enabled --permissions-accounts-config-file-enabled --rpc-http-enabled --rpc-http-api=ADMIN,ETH,NET,PERM,CLIQUE --host-allowlist='*' --rpc-http-cors-origins='*' --p2p-port=30305 --rpc-http-port=8547 --engine-rpc-http-port=8552 --engine-host-allowlist='*'",
+        "besu": "besu --network=dev --miner-enabled --miner-coinbase=0xfe3b557e8fb62b89f4916b721be55ceb828dbd73 --rpc-http-cors-origins='all' --host-allowlist='*' --rpc-ws-enabled --rpc-http-enabled --data-path=/tmp/tmpDatdir"
+    },
+    "dependencies": {
+        "@truffle/hdwallet-provider": "^2.0.8"
+    }
+}

@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  besu:
+    build:
+      context: .
+      target: besu
+    image: besu:latest
+    container_name: besu
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - 1000:1000
+    networks:
+      - besu-network
+
+
+networks:
+  besu-network:
+    driver: bridge
